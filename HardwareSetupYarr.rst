@@ -1,4 +1,4 @@
-Hardware Setup
+Hardware Setup (Yarr)
 =====================================
 
 - For hardware the following pieces are needed

@@ -1,4 +1,4 @@
-Software Setup
+Software Setup (Yarr)
 =====================================
 
 - Follow the following steps to setup the software part of the system.

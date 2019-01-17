@@ -16,7 +16,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Hardware Setup" href="HardwareSetup.html" />
+    <link rel="next" title="Hardware Setup (Yarr)" href="HardwareSetupYarr.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -39,8 +39,9 @@
 <h2>Guide<a class="headerlink" href="#guide" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="HardwareSetup.html">Hardware Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SoftwareSetup.html">Software Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HardwareSetupYarr.html">Hardware Setup (Yarr)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SoftwareSetupYarr.html">Software Setup (Yarr)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RCESetup.html">Hardware/Software Setup (RCE)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UsageExamples.html">Usage Examples</a></li>
 </ul>
 </div>
@@ -65,14 +66,34 @@
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>This is a firmware RD53A emulator (code located here <a class="reference external" href="https://gitlab.cern.ch/dgsmith/rd53a_hardware_emulator">https://gitlab.cern.ch/dgsmith/rd53a_hardware_emulator</a>). The emulator has currently been set up to communicate properly with the YARR firmware (located here <a class="reference external" href="https://github.com/Yarr/Yarr-fw">https://github.com/Yarr/Yarr-fw</a>). The main pieces of currently working functionality are listed below.</li>
-<li>Reading and writing of global registers. The read out registers are sent through lane 0.</li>
-<li>Trigger commands will output clumps of trigger data. The trigger data that comes out currently creates a checkboard pattern that can be updated by pressing the North button on the KC705.</li>
-<li>ECR, BCR, and CAL commands are received by the system though currently have no external impact.</li>
+<li>This is a firmware RD53A emulator (code located here <a class="reference external" href="https://gitlab.cern.ch/dgsmith/rd53a_hardware_emulator">https://gitlab.cern.ch/dgsmith/rd53a_hardware_emulator</a>). The emulator has currently been set up to communicate properly with the YARR firmware (located here <a class="reference external" href="https://github.com/Yarr/Yarr-fw">https://github.com/Yarr/Yarr-fw</a>).</li>
+<li>A 160 MHz output version of the emulator has also been designed to setup communication between the RD53A emulator and the RCE-RD53A projetc at SLAC (the code for this can also be found at the link above.)</li>
 <li>Information on the installation of YARR and using YARR can be found here <a class="reference external" href="https://yarr.readthedocs.io/en/latest/">https://yarr.readthedocs.io/en/latest/</a>.</li>
 <li>A block diagram of the system can be seen below.</li>
 </ul>
 <img alt="_images/emulator_block_diagram.png" src="_images/emulator_block_diagram.png" />
+</div>
+<div class="section" id="current-features-non-features">
+<h2>Current Features/Non-features<a class="headerlink" href="#current-features-non-features" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>The main pieces of currently working functionality are listed below.</li>
+<li>Reading and writing of global registers. The read out registers are sent through lane 0.</li>
+<li>Trigger commands will output clumps of trigger data. The trigger data that currently creates comes out a checkboard pattern.</li>
+<li>ECR, BCR, and CAL commands are received by the system though currently have no external impact.</li>
+<li>The main non-features are listed below.</li>
+<li>Since this is a digital design project any RD53A features that involve analog circuitry such as the pixels have been greatly simplified or removed entirely.</li>
+<li>An example of a simplification is that the pixel data outputted by triggers is the result of random number generators and/or standarized data formats not produced by an emulation of individual pixels. Examples of analog features that have been removed include pixel calibration injection as well as the mechanics that allow the user to read/write to pixel registers.</li>
+<li>As stated above ECR, BCR, and CAL commands are received by the system though currently have no external impact.</li>
+</ul>
+</div>
+<div class="section" id="planned-features-updates">
+<h2>Planned Features/Updates<a class="headerlink" href="#planned-features-updates" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>The currently planned updates and upgrades to the system are listed below</li>
+<li>An overhaul of the trigger system that will make the system produce data that is closer to real pixel data.</li>
+<li>Developing compatibility with the RCE-RD53A project.</li>
+<li>Developing compatiblity with the FELIX project.</li>
+</ul>
 </div>
 </div>
 
@@ -94,8 +115,9 @@
 
 <h3>Navigation</h3>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="HardwareSetup.html">Hardware Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SoftwareSetup.html">Software Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HardwareSetupYarr.html">Hardware Setup (Yarr)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SoftwareSetupYarr.html">Software Setup (Yarr)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RCESetup.html">Hardware/Software Setup (RCE)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UsageExamples.html">Usage Examples</a></li>
 </ul>
 
@@ -103,7 +125,7 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="#">Documentation overview</a><ul>
-      <li>Next: <a href="HardwareSetup.html" title="next chapter">Hardware Setup</a></li>
+      <li>Next: <a href="HardwareSetupYarr.html" title="next chapter">Hardware Setup (Yarr)</a></li>
   </ul></li>
 </ul>
 </div>
