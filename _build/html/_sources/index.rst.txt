@@ -41,14 +41,17 @@ Description
 Current Features/Non-features
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - The main pieces of currently working functionality are listed below.
+- Input data to the system is properly decoded using the custom rd53A protocol.
+- Output data of the system is properly encoded using the aurora 64/66B protocal at 640 MHz. 
 - Reading and writing of global registers. The read out registers are sent through lane 0. 
-- Trigger commands will output clumps of trigger data. The trigger data that currently creates comes out a checkboard pattern.
+- Trigger commands output clumps of trigger data. The trigger data that is currently created comes out a checkboard pattern.
 - ECR, BCR, and CAL commands are received by the system though currently have no external impact.
 
 - The main non-features are listed below. 
 - Since this is a digital design project any RD53A features that involve analog circuitry such as the pixels have been greatly simplified or removed entirely. 
-- An example of a simplification is that the pixel data outputted by triggers is the result of random number generators and/or standarized data formats not produced by an emulation of individual pixels. Examples of analog features that have been removed include pixel calibration injection as well as the mechanics that allow the user to read/write to pixel registers. 
+- An example of a simplification is that the pixel data outputted by triggers is the result of random number generators and/or standarized data formats and is not produced by an emulation of individual pixels. Examples of analog features that have been removed include pixel calibration injection as well as the mechanics that allow the user to read/write to pixel registers and modify pixel configuration. 
 - As stated above ECR, BCR, and CAL commands are received by the system though currently have no external impact.
+- The 160 MHz input clock is not derived from the input stream using clock data recovery and needs to be provided to the system as a seperate signal. 
 
 Planned Features/Updates
 ^^^^^^^^^^^^^^^^^^^^^^^^

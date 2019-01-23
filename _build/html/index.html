@@ -77,13 +77,16 @@
 <h2>Current Features/Non-features<a class="headerlink" href="#current-features-non-features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>The main pieces of currently working functionality are listed below.</li>
+<li>Input data to the system is properly decoded using the custom rd53A protocol.</li>
+<li>Output data of the system is properly encoded using the aurora 64/66B protocal at 640 MHz.</li>
 <li>Reading and writing of global registers. The read out registers are sent through lane 0.</li>
-<li>Trigger commands will output clumps of trigger data. The trigger data that currently creates comes out a checkboard pattern.</li>
+<li>Trigger commands output clumps of trigger data. The trigger data that is currently created comes out a checkboard pattern.</li>
 <li>ECR, BCR, and CAL commands are received by the system though currently have no external impact.</li>
 <li>The main non-features are listed below.</li>
 <li>Since this is a digital design project any RD53A features that involve analog circuitry such as the pixels have been greatly simplified or removed entirely.</li>
-<li>An example of a simplification is that the pixel data outputted by triggers is the result of random number generators and/or standarized data formats not produced by an emulation of individual pixels. Examples of analog features that have been removed include pixel calibration injection as well as the mechanics that allow the user to read/write to pixel registers.</li>
+<li>An example of a simplification is that the pixel data outputted by triggers is the result of random number generators and/or standarized data formats and is not produced by an emulation of individual pixels. Examples of analog features that have been removed include pixel calibration injection as well as the mechanics that allow the user to read/write to pixel registers and modify pixel configuration.</li>
 <li>As stated above ECR, BCR, and CAL commands are received by the system though currently have no external impact.</li>
+<li>The 160 MHz input clock is not derived from the input stream using clock data recovery and needs to be provided to the system as a seperate signal.</li>
 </ul>
 </div>
 <div class="section" id="planned-features-updates">
