@@ -27,12 +27,13 @@ Contributors
 Build Info
 ^^^^^^^^^^
 - Targets Xilinx KC705 Kintex FPGA Board 
-- Vivado 2016.2
+- Vivado 2016.2/2017.4
 
 Description
 ^^^^^^^^^^^
 - This is a firmware RD53A emulator (code located here https://gitlab.cern.ch/dgsmith/rd53a_hardware_emulator). The emulator has currently been set up to communicate properly with the YARR firmware (located here https://github.com/Yarr/Yarr-fw). 
 - A 160 MHz output version of the emulator has also been designed to setup communication between the RD53A emulator and the RCE-RD53A projetc at SLAC (the code for this can also be found at the link above.) 
+- A copy of the project has been made that runs in vivado 2017.4. This version of the project also has updated trigger behavior.
 - Information on the installation of YARR and using YARR can be found here https://yarr.readthedocs.io/en/latest/.
 - A block diagram of the system can be seen below.
 
@@ -44,7 +45,7 @@ Current Features/Non-features
 - Input data to the system is properly decoded using the custom rd53A protocol.
 - Output data of the system is properly encoded using the aurora 64/66B protocal at 640 MHz. 
 - Reading and writing of global registers. The read out registers are sent through lane 0. 
-- Trigger commands output clumps of trigger data. The trigger data that is currently created comes out a checkboard pattern.
+- Trigger commands output clumps of trigger data. The trigger data that is currently created comes out a checkboard pattern or as randomly placed L shaped clumps (see usage examples for more details).
 - ECR, BCR, and CAL commands are received by the system though currently have no external impact.
 
 - The main non-features are listed below. 
