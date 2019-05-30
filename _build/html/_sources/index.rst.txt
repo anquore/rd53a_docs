@@ -23,6 +23,21 @@ Contributors
 * Logan Adams
 * Joe Mayer 
 
+For RD53A DEMO
+^^^^^^^^^^^^^^
+- To get to YARR code base run cd Desktop/Yarr-develv2/Yarr/src
+
+- Emulator bit files are saved in Desktop/Yarr-develv2/bits
+
+- If the emulator stops working turn off the PC/ turn it back on and then reflash the emulator using vivado 2017.4
+
+- To access 2017.4 run source ~/Xilinx/Vivado/2017.4/settings.sh
+
+- To view data run an analogscan
+
+- To adjust the amount of hit data produced change the value of HitOr0MaskDiff0
+
+- To view the value of the registers on the emulator run rd53a_readreg
 
 
 Build Info
